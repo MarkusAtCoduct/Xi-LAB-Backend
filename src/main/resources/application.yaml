@@ -16,8 +16,8 @@ spring:
         lob:
           non_contextual_creation: true
   datasource:
-    #url: jdbc:postgresql://54.251.228.137:5432/xiLab
-    url: jdbc:postgresql://db:5432/xiLab
+    url: jdbc:postgresql://54.251.228.137:5432/xiLab
+    #url: jdbc:postgresql://db:5432/xiLab
     username: admin
     password: 12!@qwQW
     hikari:
