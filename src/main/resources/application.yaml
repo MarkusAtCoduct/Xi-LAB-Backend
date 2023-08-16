@@ -11,15 +11,20 @@ spring:
     show-sql: false
     hibernate:
       ddl-auto: create
-      dialect: org.hibernate.dialect.PostgreSQL95Dialect
+      #dialect: org.hibernate.dialect.PostgreSQL95Dialect
+      dialect: org.hibernate.dialect.SQLServer2016Dialect
       jdbc:
         lob:
           non_contextual_creation: true
   datasource:
-    url: jdbc:postgresql://54.251.228.137:5432/xiLab
+
+    #url: jdbc:postgresql://54.251.228.137:5432/xiLab
+    url: jdbc:sqlserver://xitoolbox.database.windows.net:1433/xiLab
     #url: jdbc:postgresql://db:5432/xiLab
-    username: admin
-    password: 12!@qwQW
+    #username: admin
+    username: xitoolboxserveradmin
+    #password: 12!@qwQW
+    password: VpTcutayhvC4bTV
     hikari:
       connection-timeout: 50000
       idle-timeout: 300000
