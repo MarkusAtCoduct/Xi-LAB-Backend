@@ -1,0 +1,53 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  config:
+    import: classpath:application-common.yaml
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    hibernate:
+      ddl-auto: create
+      dialect: org.hibernate.dialect.PostgreSQL95Dialect
+      jdbc:
+        lob:
+          non_contextual_creation: true
+  datasource:
+    #url: jdbc:postgresql://54.251.228.137:5432/xiLab
+    url: jdbc:postgresql://db:5432/xiLab
+    username: admin
+    password: 12!@qwQW
+    hikari:
+      connection-timeout: 50000
+      idle-timeout: 300000
+      maximum-pool-size: 8
+      minimum-idle: 3
+      poolName: xilab-dev-app
+
+# App Properties
+xilab:
+  app:
+    jwtSecret: "!*nSb*K4zPi1ry2kIDEA"
+    jwtExpirationSeconds: 912000000
+    jwtRefreshExpirationSeconds: 912000000
+    jwtEnv: dev
+
+    # Email config
+    forgotPasswordTokenExpirationHours: 48
+    sesApiKey: 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
+    sesFromEmail: maintainer.toolbox@gmail.com
+
+    # S3 config
+    s3AccessKey: AKIA2C7BM7VGEYN6QP7N
+    s3SecretKey: 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
+    s3Bucket: hiennguyen-test
+    s3BucketRegion: ap-southeast-1
+
+    # Resource URL
+    resourceUrl: https://xi-lab.codeleap.net
+
+server:
+  port: 8090

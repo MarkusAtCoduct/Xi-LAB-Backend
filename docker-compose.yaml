@@ -1,0 +1,51 @@
+# version: '3.8'
+# services:
+#   db:
+#     image: postgres:14.1-alpine
+#     environment:
+#       - POSTGRES_USER=admin
+#       - POSTGRES_PASSWORD=12!@qwQW
+#       - POSTGRES_DB=xiLab
+#     ports:
+#       - '5432:5432'
+#     volumes:
+#       - db:/var/lib/postgresql/data
+# volumes:
+#   db:
+#     driver: local
+
+
+version: '3.8'
+
+services:
+  db:
+    image: postgres:14.1-alpine
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=12!@qwQW
+      - POSTGRES_DB=xiLab
+    ports:
+      #- '5431:5432'
+      - '5432:5432'
+    volumes:
+
+      - db:/var/lib/postgresql/data
+      #- ./SqlScripts:/docker-entrypoint-initdb.d/
+
+  xilab-service:
+    build:
+      #context: .
+      dockerfile: Dockerfile
+    image: xilab-service:2
+    ports:
+      - '8090:8090'
+    depends_on:
+      - db
+
+volumes:
+  db:
+    driver: azure_file
+    driver_opts:
+      share_name: aci-test-volume
+      storage_account_name: acistoragedocker
+      #storage_account_key: ddStbIk6ssjAqiXl+UNFBajc62eK/1w/f/JgNi/uh6TG/7zBx6clgs/yXmeiIiR1IOe97HYJjGnH+AStSfEDeQ==

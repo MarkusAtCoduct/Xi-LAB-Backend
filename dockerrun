@@ -1,0 +1,30 @@
+# mvn clean install
+# docker stop xilab-service || true && docker rm xilab-service || true
+# docker build -t xilab-service:2 .
+# docker run -d --name xilab-service -p 8090:8090 xilab-service:2
+
+
+
+
+#!/bin/bash
+
+function deleteVolume() {
+    echo "Removing volume..."
+    docker volume rm xi-lab_db
+}
+
+
+# Build your Maven project
+mvn clean install
+
+# Use Docker Compose to manage your services
+docker-compose down # Stop any previously running services
+
+
+# Check for "clean" argument
+if [ "$1" == "clean" ]; then
+    deleteVolume
+fi
+
+docker-compose build xilab-service # Build the xilab-service
+docker-compose up -d # Start the services in detached mode

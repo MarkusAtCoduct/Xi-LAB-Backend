@@ -1,0 +1,13 @@
+package com.codeleap.xilab.api.payload.request.auth;
+
+import javax.validation.constraints.NotBlank;
+
+import lombok.Data;
+
+@Data
+public class CheckResetTokenRequest {
+
+	@NotBlank(message = "Reset token should not be blank")
+	private String resetToken;
+
+}
