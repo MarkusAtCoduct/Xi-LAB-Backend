@@ -11,7 +11,7 @@ spring:
     database: SQL_SERVER
     show-sql: false
     hibernate:
-      #ddl-auto: create
+      ddl-auto: create
       #dialect: org.hibernate.dialect.PostgreSQL95Dialect
       dialect: org.hibernate.dialect.SQLServer2016Dialect
       jdbc:
@@ -20,8 +20,7 @@ spring:
   datasource:
 
     #url: jdbc:postgresql://54.251.228.137:5432/xiLab
-
-    url: jdbc:sqlserver://xitoolbox.database.windows.net:1433;database=ToolboxDatabase;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+    url: jdbc:sqlserver://xitoolbox.database.windows.net:1433;database=ToolBoxDatabase;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
     #url: jdbc:sqlserver://xitoolbox.database.windows.net:1433;database=toolboxdb;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
     #url: jdbc:postgresql://db:5432/xiLab
     #username: admin
