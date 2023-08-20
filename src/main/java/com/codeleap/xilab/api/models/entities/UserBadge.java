@@ -1,7 +1,5 @@
 package com.codeleap.xilab.api.models.entities;
 
-import com.codeleap.xilab.api.models.entities.auth.User;
-
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -14,6 +12,8 @@ import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.codeleap.xilab.api.models.entities.auth.User;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,7 +31,7 @@ public class UserBadge
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false, columnDefinition = "UUID default gen_random_uuid()")
+    @Column(name = "id", nullable = false, columnDefinition = "UNIQUEIDENTIFIER default NEWID()")
     private UUID id;
 
     private String badgeType;

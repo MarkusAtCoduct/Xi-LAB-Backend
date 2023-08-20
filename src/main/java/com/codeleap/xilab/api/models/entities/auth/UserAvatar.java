@@ -1,7 +1,5 @@
 package com.codeleap.xilab.api.models.entities.auth;
 
-import org.hibernate.annotations.Type;
-
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -11,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Type;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,7 +27,7 @@ public class UserAvatar {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false, columnDefinition = "UUID default gen_random_uuid()")
+    @Column(name = "id", nullable = false, columnDefinition = "UNIQUEIDENTIFIER default NEWID()")
     private UUID id;
 
     private Long userId;
