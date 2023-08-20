@@ -11,7 +11,7 @@ spring:
     database: SQL_SERVER
     show-sql: false
     hibernate:
-      ddl-auto: create
+      #ddl-auto: create
       #dialect: org.hibernate.dialect.PostgreSQL95Dialect
       dialect: org.hibernate.dialect.SQLServer2016Dialect
       jdbc:
