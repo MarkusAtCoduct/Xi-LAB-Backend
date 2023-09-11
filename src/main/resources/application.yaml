@@ -38,8 +38,10 @@ spring:
 xilab:
   app:
     jwtSecret: "!*nSb*K4zPi1ry2kIDEA"
-    jwtExpirationSeconds: 912000000
-    jwtRefreshExpirationSeconds: 912000000
+    #jwtExpirationSeconds: 912000000
+    #jwtRefreshExpirationSeconds: 912000000
+    jwtExpirationSeconds: 3600
+    jwtRefreshExpirationSeconds: 604800
     jwtEnv: dev
 
     # Email config
